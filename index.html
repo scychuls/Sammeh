@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro ni Sammeh</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue2.gif') no-repeat center center;
+            background-size: cover;
+            backdrop-filter: blur(2px);
+            color: white;
+            overflow: hidden;
+        }
+
+        .blur-container {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: rgba(204, 230, 255);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            background-color: #004d99;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0073e6;
+        }
+
+        .input-container {
+            position: relative;
+            width: 80%;
+            margin: 0 auto 20px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 12px 10px 12px 10px;
+            font-size: 16px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            transition: all 0.3s ease-in-out;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0056b3;
+        }
+
+        input[type="text"]:focus + label,
+        input[type="text"]:not(:placeholder-shown) + label {
+            top: -12px;
+            left:50px;
+            font-size: 14px;
+            color: #007BFF;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+        input[type="text"]::placeholder {
+            color: transparent;
+        }
+
+        label {
+            position: absolute;
+            top: 12px;
+            left: 45px;
+            font-size: 16px;
+            color: #007BFF;
+            transition: 0.3s ease;
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .vanish {
+            animation: vanish 0.5s forwards;
+        }
+
+        @keyframes vanish {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+        }
+
+        .bulaga-text {
+            display: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Align the buttons horizontally in the second and third questions */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px; /* space between the buttons */
+        }
+
+        /* Flexbox for aligning Bulaga horizontally with the No button */
+        .no-button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.2;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        /* Make sure the text doesn't overflow */
+        .question-text {
+            font-size: 1.5em;
+            line-height: 1.2;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+        /* Ensure text shrinks for long questions */
+        .question-text h1 {
+            font-size: calc(1.5vw + 1.5vh);
+        }
+
+        /* Typing animation */
+        .typing {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 5px solid white;
+            width: 0;
+            animation: typing 2s steps(30) forwards, blink 0.55s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="blur-container intro">
+        <h1 class="question-text typing" id="question">Hello, World!</h1>
+        <div class="input-container">
+            <input id="userInput" type="text" placeholder="Type anything...">
+            <label for="userInput">Type anything...</label>
+        </div>
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <div id="secondQuestion" class="hidden blur-container">
+        <h1 class="question-text typing">Do you know Sammy?</h1>
+        <div class="button-container">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+
+    <div id="thirdQuestion" class="hidden blur-container">
+        <h1 class="question-text typing">Do you want to get to know more about Sammy?</h1>
+        <div class="button-container">
+            <button id="forceYesButton">Yes</button>
+            <div class="no-button-container">
+                <button id="forceNoButton">No</button>
+                <span class="bulaga-text">Bulaga!!!!</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const submitButton = document.getElementById('submitButton');
+        const secondQuestion = document.getElementById('secondQuestion');
+        const thirdQuestion = document.getElementById('thirdQuestion');
+        const userInput = document.getElementById('userInput');
+        const question = document.getElementById('question');
+        const forceNoButton = document.getElementById('forceNoButton');
+        const bulagaText = document.querySelector('.bulaga-text');
+
+        submitButton.addEventListener('click', () => {
+            if (userInput.value.trim() !== "") {
+                question.classList.remove('typing');
+                question.textContent = "Do you know Sammy?";
+                secondQuestion.classList.remove('hidden');
+                question.classList.add('typing');
+                document.querySelector('.intro').classList.add('hidden');
+            }
+        });
+
+        document.getElementById('yesButton').addEventListener('click', () => {
+            secondQuestion.classList.add('hidden');
+            thirdQuestion.classList.remove('hidden');
+        });
+
+        document.getElementById('noButton').addEventListener('click', () => {
+            secondQuestion.classList.add('hidden');
+            thirdQuestion.classList.remove('hidden');
+        });
+
+        forceNoButton.addEventListener('click', () => {
+            forceNoButton.classList.add('vanish');
+            setTimeout(() => {
+                forceNoButton.style.display = 'none';
+                bulagaText.style.display = 'inline';
+            }, 500);
+        });
+
+        document.getElementById('forceYesButton').addEventListener('click', () => {
+            window.location.href = 'me.html';
+        });
+    </script>
+</body>
+</html>
