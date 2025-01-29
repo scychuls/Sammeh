@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Papyrus', fantasy;
             margin: 0;
             padding: 0;
             background: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue5.gif') no-repeat center center fixed;
@@ -85,7 +85,7 @@
 }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
@@ -122,7 +122,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Sparkle Button */
+        /Bubble Button */
 .section-text .button {
     display: inline-block;
     text-decoration: none;
@@ -134,7 +134,7 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    border: 2px solid #0066cc; /* Glowing border on hover */
+    border: 2px solid #0066cc; 
     box-shadow: 0 0 15px #0080ff, 0 0 25px #16a085;
 }
 
@@ -142,11 +142,11 @@
     background-color: #0099ff;
     transform: scale(1.1);
     color: #fff;
-    border: 2px solid #0080ff; /* Glowing border on hover */
+    border: 2px solid #0080ff; 
     box-shadow: 0 0 10px #0080ff, 0 0 20px #16a085;
 }
 
-/* Sparkle Effect */
+/* Bubble Effect */
 .section-text .button::before,
 .section-text .button::after {
     content: '';
@@ -159,12 +159,12 @@
     animation: sparkle-animation 1.2s infinite ease-in-out;
     pointer-events: none;
     transform: scale(0);
-    visibility: hidden; /* Hide by default */
+    visibility: hidden; 
 }
 
 .section-text .button:hover::before,
 .section-text .button:hover::after {
-    visibility: visible; /* Show when hovered */
+    visibility: visible; 
 }
 
 .section-text .button::before {
@@ -179,7 +179,6 @@
     animation-delay: 0.6s;
 }
 
-/* Keyframes for Sparkle */
 @keyframes sparkle-animation {
     0% {
         transform: scale(0.5);
@@ -194,7 +193,6 @@
         opacity: 0;
     }
 }
-
         .section-image {
             flex: 1 1 40%;
             display: flex;
@@ -209,7 +207,6 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         
-       /* Slideshow Container */
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -219,14 +216,14 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Slides */
+/* Slideshow*/
 .slide {
     display: none;
     text-align: center;
 }
 
 .slide img {
-    width: 100%;
+    width: 90%;
     border-radius: 0.5rem;
 }
 
@@ -272,7 +269,6 @@
     background: rgba(0, 0, 0, 0.8);
 }
 
-/* Dots */
 .dots {
     text-align: center;
     margin-top: 1rem;
@@ -293,7 +289,6 @@
     background-color: #0080ff;
 }
 
-/* Portfolio Section Styles */
 /* Portfolio Section */
 .portfolio-wrapper {
     display: flex;
@@ -406,11 +401,12 @@
 
 .social-icon {
     display: inline-block;
-    font-size: 40px;
-    margin: 0 15px;
+    font-size: 50px;
+    margin: 0 10px;
     position: relative;
     color: white;
     transition: all 0.3s ease;
+    padding:30px;
 }
 
 .social-icon i {
@@ -424,15 +420,14 @@
 .social-icon:hover::after {
     content: attr(title);
     position: absolute;
-    bottom: -25px;
+    bottom: -38px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
-    opacity: 1;
+    opacity: 2;
 }
 
 .social-icon.facebook {
@@ -456,7 +451,8 @@
 }
 
 .social-icon:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+    opacity: 2;
 }
 
 
@@ -528,7 +524,7 @@
     <div class="slideshow-container">
         <!-- Slide 1 -->
         <div class="slide fade">
-            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif" alt="Slide 1 Image">
+            <img src="https://assets.onecompiler.app/437htatea/437htckpy/samprof.jpeg" alt="Slide 1 Image">
             <div class="caption">
                 <h2>I'm Sammeh</h2>
                 <p>I am 20 years old and I was born on September 15, 2004. Temporarily, I lived in Bulihan, Silang, Cavite.</p>
@@ -537,7 +533,7 @@
 
         <!-- Slide 2 -->
         <div class="slide fade">
-            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue1.jpeg" alt="Slide 2 Image">
+            <img src="https://assets.onecompiler.app/437htatea/437htckpy/blue9.gif" alt="Slide 2 Image">
             <div class="caption">
                 <h2>Hobbies</h2>
                 <p>I like to play all kinds of games (except games that makes me dizzy). I also like to watch animes, all kinds of drama, series, docmentaries, I like all sorts of genre.</p>
@@ -546,7 +542,7 @@
 
         <!-- Slide 3 -->
         <div class="slide fade">
-            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue2.gif" alt="Slide 3 Image">
+            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue6.gif" alt="Slide 3 Image">
             <div class="caption">
                 <h2>Interest</h2>
                 <p>I am interested to anything that makes my curiousity crave for more. Like programming, I got curious how things like apps and websites/webpages or even the machines are created. It amazes me how things can be easier and be innovative by just programming it!</p>
@@ -555,19 +551,19 @@
         
         <!-- Slide 4 -->
         <div class="slide fade">
-            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue6.gif" alt="Slide 4 Image">
+            <img src="https://assets.onecompiler.app/437htatea/437htckpy/blue8.jpeg" alt="Slide 4 Image">
             <div class="caption">
-                <h2>Interest</h2>
-                <p>I am interested to anything that makes my curiousity crave for more. Like programming, I got curious how things like apps and websites/webpages or even the machines are created. It amazes me how things can be easier and be innovative by just programming it!</p>
+                <h2>Programming Knowledges</h2>
+                  <p>These are the programming knowledges I've learned and explored. But my knowledge about them is still not that deep, I have so much to learn and to explore more!</p>
             </div>
         </div>
         
         <!-- Slide 5 -->
         <div class="slide fade">
-            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue7.gif" alt="Slide 5 Image">
+            <img src="https://assets.onecompiler.app/437htatea/437htckpy/blue11.gif" alt="Slide 5 Image">
             <div class="caption">
-                <h2>Interest</h2>
-                <p>I am interested to anything that makes my curiousity crave for more. Like programming, I got curious how things like apps and websites/webpages or even the machines are created. It amazes me how things can be easier and be innovative by just programming it!</p>
+                <h2>More Journey</h2>
+                <p>I'm always looking forward to the things I can do with all those things related to IT.</p>
             </div>
         </div>
 
@@ -586,83 +582,54 @@
     </div>
 </section>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="section">
-            <div class="section-text">
-                <h1>My Portfolio</h1>
-                <p>Explore my projects and the work I have done in various fields of design and development.</p>
-            </div>
+       <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="section-text">
+            <h1>My Portfolio</h1>
+            <p>Explore my projects and the work I have done in various fields of design and development.</p>
+        </div>
 
-            <div class="portfolio-wrapper">
-                <div class="portfolio-container">
-                   <div class="card" style="background-image: url('https://via.placeholder.com/300x200');">
-    <div class="card-content">
-        <h3>Project 1</h3>
-        <p>A brief description of Project 1.</p>
-    </div>
-</div>
+        <div class="portfolio-wrapper">
+            <button class="prev">&#10094;</button>
+            <div class="portfolio-container">
 
-                    <!-- Card 2 -->
-                    <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue1.jpeg');">
-    <div class="card-content">
-        <h3>Project 1</h3>
-        <p>A brief description of Project 1.</p>
-    </div>
-</div>
-
-                    <!-- Card 3 -->
-                    <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue2.gif');">
-    <div class="card-content">
-        <h3>Project 3</h3>
-        <p>A brief description of Project 3.</p>
-    </div>
-</div>
-
-                    <!-- Card 4 -->
-                    <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue5.gif');">
-                        <div class="card-content">
-                            <h3>Project 4</h3>
-                            <p>A brief description of Project 4.</p>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif');">
-                        <div class="card-content">
-                            <h3>Project 5</h3>
-                            <p>A brief description of Project 5.</p>
-                        </div>
-                    </div>
-                
-                <!-- Card 6 -->
-                <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif');">
-                        <div class="card-content">
-                            <h3>Project 5</h3>
-                            <p>A brief description of Project 5.</p>
-                        </div>
-                    </div>
-               
-                <!-- Card 7 -->
-                <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif');">
-                        <div class="card-content">
-                            <h3>Project 5</h3>
-                            <p>A brief description of Project 5.</p>
-                        </div>
-                    </div>
-                
-                <!-- Card 8 -->
-                <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif');">
-                        <div class="card-content">
-                            <h3>Project 5</h3>
-                            <p>A brief description of Project 5.</p>
-                        </div>
+                <!-- Card 1 -->
+                <div class="card" 
+                     style="background-image: url('https://assets.onecompiler.app/437htatea/437htckpy/p1.jpeg');" 
+                     data-media='["https://assets.onecompiler.app/437htatea/437htckpy/p2.jpeg", "https://assets.onecompiler.app/437htatea/437htckpy/p3.jpeg"]'>
+                    <div class="card-content">
+                        <h3>Project 1</h3>
+                        <p>Description of Project 1.</p>
                     </div>
                 </div>
 
-                <!-- Navigation Buttons -->
+                <!-- Card 2 -->
+                <div class="card" 
+                     style="background-image: url('your-image2.jpg');" 
+                     data-media='["your-image2.jpg", "video2.mp4", "another-image2.jpg"]'>
+                    <div class="card-content">
+                        <h3>Project 2</h3>
+                        <p>Description of Project 2.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card" 
+                     style="background-image: url('your-image3.jpg');" 
+                     data-media='["your-image3.jpg", "video3.mp4", "another-image3.jpg"]'>
+                    <div class="card-content">
+                        <h3>Project 3</h3>
+                        <p>Description of Project 3.</p>
+                    </div>
+                </div>
+
+                <!-- Add More Cards as Needed -->
+</div
+            
+            <!-- Navigation Buttons -->
                 <a class="prev" onclick="plusCards(-1)">&#10094;</a>
                 <a class="next" onclick="plusCards(1)">&#10095;</a>
-            </div>
+            >
 
             <!-- Dots/Indicators -->
             <div class="dots">
@@ -673,20 +640,36 @@
                 <span class="dot" onclick="currentCard(5)"></span>
                 
             </div>
+
+    </section>
+
+    <!-- Modal Popup -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-media">
+                <button class="modal-prev">&#10094;</button>
+                <img id="modal-image" src="">
+                <video id="modal-video" controls style="display: none;"></video>
+                <button class="modal-next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+                
         </section>
     </div>
 
 <!-- Contact Section -->
 <section id="contact" class="section">
     <div class="section-text">
-        <h1>Contact</h1>
+        <h1>Contact Me!</h1>
         <p>Feel free to reach out to discuss potential projects, collaborations, or just to say hello! I’d love to hear from you.</p>
     </div>
     <div class="section-image">
         <a href="https://www.facebook.com/share/1YkKYodzS4/" class="social-icon facebook" title="Facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://www.instagram.com/julssmmy?igsh=MWFvNWt1aXEwb2l4aQ==" class="social-icon discord" title="Discord">
+        <a href="https://www.discordapp.com/users/5416639997130834" class="social-icon discord" title="Discord">
             <i class="fab fa-discord"></i>
         </a>
         <a href="https://github.com/scychuls" class="social-icon github" title="Github">
@@ -701,12 +684,12 @@
 <!-- Footer Section -->
 <footer class="footer">
     <div class="footer-content">
-        <p class="footer-text">c Sammeh 2025, Created with Passion</p>
+        <p class="footer-text">© Sammeh 2025. Created with Passion</p>
     </div>
 </footer>
 
     <script>
-        // Navbar animations using GSAP
+             // Navbar animations using GSAP
         document.addEventListener("DOMContentLoaded", () => {
             const navLinks = document.querySelectorAll("nav ul li a");
             const navList = document.querySelector("nav ul");
@@ -805,7 +788,6 @@ function currentCard(n) {
 
 // Initialize the first set of cards and dots
 showCards(currentIndex);
-
     </script>
 </body>
 </html>
