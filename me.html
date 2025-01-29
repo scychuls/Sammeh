@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue5.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+
+        header {
+            background: rgba(0, 17, 51, 0.8);
+            color: #ecf0f1;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+            border-radius: 0.5rem;
+        }
+        
+         .header-title {
+            font-size: 2rem;
+            font-weight: bold;
+            animation: glow 2s infinite alternate;
+            cursor: pointer;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #0080ff, 0 0 20px #0080ff, 0 0 30px #16a085, 0 0 40px #16a085;
+                color: #ecf0f1;
+            }
+            to {
+                text-shadow: 0 0 20px #0080ff, 0 0 30px #16a085, 0 0 40px #0080ff, 0 0 50px #0080ff;
+                color: #0080ff;
+            }
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+    color: #ecf0f1;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+        nav ul li a:hover {
+            color: #3366ff;
+    transform: translateY(-5px);
+    text-shadow: 0 0 10px #0080ff, 0 0 20px #0080ff, 0 0 30px #16a085, 0 0 40px #16a085;
+}
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 37px 0 rgba(31, 38, 135, 0.37);
+            min-height: 60vh;
+        }
+
+        .section-text {
+            flex: 1 1 50%;
+            padding-right: 2rem;
+        }
+
+        .section-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Sparkle Button */
+.section-text .button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    background-color: #005c99;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #0066cc; /* Glowing border on hover */
+    box-shadow: 0 0 15px #0080ff, 0 0 25px #16a085;
+}
+
+.section-text .button:hover {
+    background-color: #0099ff;
+    transform: scale(1.1);
+    color: #fff;
+    border: 2px solid #0080ff; /* Glowing border on hover */
+    box-shadow: 0 0 10px #0080ff, 0 0 20px #16a085;
+}
+
+/* Sparkle Effect */
+.section-text .button::before,
+.section-text .button::after {
+    content: '';
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: #fff;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: sparkle-animation 1.2s infinite ease-in-out;
+    pointer-events: none;
+    transform: scale(0);
+    visibility: hidden; /* Hide by default */
+}
+
+.section-text .button:hover::before,
+.section-text .button:hover::after {
+    visibility: visible; /* Show when hovered */
+}
+
+.section-text .button::before {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.section-text .button::after {
+    top: 80%;
+    right: 20%;
+    animation-delay: 0.6s;
+}
+
+/* Keyframes for Sparkle */
+@keyframes sparkle-animation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+        .section-image {
+            flex: 1 1 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+       /* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Slides */
+.slide {
+    display: none;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* Captions */
+.caption {
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 0.5rem;
+    margin-top: -3rem;
+    display: inline-block;
+    position: relative;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots */
+.dots {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot:hover, .active {
+    background-color: #0080ff;
+}
+
+/* Portfolio Section Styles */
+/* Portfolio Section */
+.portfolio-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.portfolio-container {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+/* Card Styles */
+.card {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    /* Set background image for card */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Title and Description */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    font-size: 1rem;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 1000;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Dots/Indicators */
+.dots {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.social-icon {
+    display: inline-block;
+    font-size: 40px;
+    margin: 0 15px;
+    position: relative;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-icon i {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: scale(1.2);
+}
+
+.social-icon:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.social-icon.facebook {
+    color: #3b5998;
+    box-shadow: 0 0 10px #3b5998;
+}
+
+.social-icon.discord {
+    color: #7289da;
+    box-shadow: 0 0 10px #7289da;
+}
+
+.social-icon.github {
+    color: #333;
+    box-shadow: 0 0 10px #333;
+}
+
+.social-icon.email {
+    color: #ea4335;
+    box-shadow: 0 0 10px #ea4335;
+}
+
+.social-icon:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+
+.footer {
+    background: rgba(0, 17, 51, 0.8); 
+    color: #ecf0f1;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.footer-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    animation: glow 2s infinite alternate;
+    cursor: pointer;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #0080ff, 0 0 20px #0080ff, 0 0 30px #16a085, 0 0 40px #16a085;
+        color: #ecf0f1;
+    }
+    to {
+        text-shadow: 0 0 20px #0080ff, 0 0 30px #16a085, 0 0 40px #0080ff, 0 0 50px #0080ff;
+        color: #0080ff;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header id="mainHeader">
+        <h1 class="header-title">Portpolyo ni Sammeh</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Home Section -->
+          <section id="home" class="section">
+            <div class="section-text">
+                <h1>Welcome sa Portpolyo ni Sammeh</h1>
+                <p>Helloo I'm Sammeh, also known as Samantha Julia Tabanao. I am a first year college student at Cavite State University - Silang Campus and taking a course of Bachelor of Science in Information Technology. Currently on section BSIT-1C.</p>
+                <a href="#about" class="button">Learn More About Me</a>
+            </div>
+            <div class="section-image">
+                <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue6.jpeg" alt="A creative illustration of Sammy">
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section">
+          <h1>About Me</h1>
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide fade">
+            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif" alt="Slide 1 Image">
+            <div class="caption">
+                <h2>I'm Sammeh</h2>
+                <p>I am 20 years old and I was born on September 15, 2004. Temporarily, I lived in Bulihan, Silang, Cavite.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide fade">
+            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue1.jpeg" alt="Slide 2 Image">
+            <div class="caption">
+                <h2>Hobbies</h2>
+                <p>I like to play all kinds of games (except games that makes me dizzy). I also like to watch animes, all kinds of drama, series, docmentaries, I like all sorts of genre.</p>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide fade">
+            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue2.gif" alt="Slide 3 Image">
+            <div class="caption">
+                <h2>Interest</h2>
+                <p>I am interested to anything that makes my curiousity crave for more. Like programming, I got curious how things like apps and websites/webpages or even the machines are created. It amazes me how things can be easier and be innovative by just programming it!</p>
+            </div>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="slide fade">
+            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue6.gif" alt="Slide 4 Image">
+            <div class="caption">
+                <h2>Interest</h2>
+                <p>I am interested to anything that makes my curiousity crave for more. Like programming, I got curious how things like apps and websites/webpages or even the machines are created. It amazes me how things can be easier and be innovative by just programming it!</p>
+            </div>
+        </div>
+        
+        <!-- Slide 5 -->
+        <div class="slide fade">
+            <img src="https://assets.onecompiler.app/437a2wm9y/4379z65th/blue7.gif" alt="Slide 5 Image">
+            <div class="caption">
+                <h2>Interest</h2>
+                <p>I am interested to anything that makes my curiousity crave for more. Like programming, I got curious how things like apps and websites/webpages or even the machines are created. It amazes me how things can be easier and be innovative by just programming it!</p>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots/Indicators -->
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+</section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="section">
+            <div class="section-text">
+                <h1>My Portfolio</h1>
+                <p>Explore my projects and the work I have done in various fields of design and development.</p>
+            </div>
+
+            <div class="portfolio-wrapper">
+                <div class="portfolio-container">
+                   <div class="card" style="background-image: url('https://via.placeholder.com/300x200');">
+    <div class="card-content">
+        <h3>Project 1</h3>
+        <p>A brief description of Project 1.</p>
+    </div>
+</div>
+
+                    <!-- Card 2 -->
+                    <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue1.jpeg');">
+    <div class="card-content">
+        <h3>Project 1</h3>
+        <p>A brief description of Project 1.</p>
+    </div>
+</div>
+
+                    <!-- Card 3 -->
+                    <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue2.gif');">
+    <div class="card-content">
+        <h3>Project 3</h3>
+        <p>A brief description of Project 3.</p>
+    </div>
+</div>
+
+                    <!-- Card 4 -->
+                    <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue5.gif');">
+                        <div class="card-content">
+                            <h3>Project 4</h3>
+                            <p>A brief description of Project 4.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif');">
+                        <div class="card-content">
+                            <h3>Project 5</h3>
+                            <p>A brief description of Project 5.</p>
+                        </div>
+                    </div>
+                
+                <!-- Card 6 -->
+                <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif');">
+                        <div class="card-content">
+                            <h3>Project 5</h3>
+                            <p>A brief description of Project 5.</p>
+                        </div>
+                    </div>
+               
+                <!-- Card 7 -->
+                <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif');">
+                        <div class="card-content">
+                            <h3>Project 5</h3>
+                            <p>A brief description of Project 5.</p>
+                        </div>
+                    </div>
+                
+                <!-- Card 8 -->
+                <div class="card" style="background-image: url('https://assets.onecompiler.app/437a2wm9y/4379z65th/blue3.gif');">
+                        <div class="card-content">
+                            <h3>Project 5</h3>
+                            <p>A brief description of Project 5.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <a class="prev" onclick="plusCards(-1)">&#10094;</a>
+                <a class="next" onclick="plusCards(1)">&#10095;</a>
+            </div>
+
+            <!-- Dots/Indicators -->
+            <div class="dots">
+                <span class="dot" onclick="currentCard(1)"></span>
+                <span class="dot" onclick="currentCard(2)"></span>
+                <span class="dot" onclick="currentCard(3)"></span>
+                <span class="dot" onclick="currentCard(4)"></span>
+                <span class="dot" onclick="currentCard(5)"></span>
+                
+            </div>
+        </section>
+    </div>
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="section-text">
+        <h1>Contact</h1>
+        <p>Feel free to reach out to discuss potential projects, collaborations, or just to say hello! I’d love to hear from you.</p>
+    </div>
+    <div class="section-image">
+        <a href="https://www.facebook.com/share/1YkKYodzS4/" class="social-icon facebook" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/julssmmy?igsh=MWFvNWt1aXEwb2l4aQ==" class="social-icon discord" title="Discord">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://github.com/scychuls" class="social-icon github" title="Github">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:your.samanthajulia.tabanao@cvsu.edu.ph" class="social-icon email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-text">c Sammeh 2025, Created with Passion</p>
+    </div>
+</footer>
+
+    <script>
+        // Navbar animations using GSAP
+        document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll("nav ul li a");
+            const navList = document.querySelector("nav ul");
+
+            // Initial navbar animation
+            gsap.from(navList, {
+                opacity: 0,
+                y: -50,
+                duration: 1,
+                ease: "power3.out",
+            });
+
+            // Hover animation for nav links
+            navLinks.forEach((link) => {
+                link.addEventListener("mouseenter", () => {
+                    gsap.to(link, {
+                        y: -10,
+                        color: "#3366ff",
+                        duration: 0.3,
+                        ease: "power2.out",
+                    });
+                });
+
+                link.addEventListener("mouseleave", () => {
+                    gsap.to(link, {
+                        y: 0,
+                        color: "#ecf0f1",
+                        duration: 0.3,
+                        ease: "power2.inOut",
+                    });
+                });
+            });
+        });
+        
+        // Slideshow Script
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+    
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
+let currentIndex = 0;
+const cards = document.querySelectorAll('.card');
+const dots = document.querySelectorAll('.dot');
+const container = document.querySelector('.portfolio-container');
+const totalCards = cards.length;
+
+/* Show the cards based on index */
+function showCards(n) {
+    if (n >= totalCards) currentIndex = 0; // Loop back to first set
+    if (n < 0) currentIndex = totalCards - 1; // Loop to last set
+
+    const offset = -currentIndex * (cards[0].offsetWidth + 16); // Adjust for margin/gap
+    container.style.transform = `translateX(${offset}px)`; // Shift the container to show the correct cards
+
+    // Update active dot
+    dots.forEach((dot, index) => {
+        dot.className = dot.className.replace(' active', '');
+        if (index === currentIndex) dot.className += ' active';
+    });
+}
+
+/* Navigate to next or previous set of cards */
+function plusCards(n) {
+    showCards(currentIndex += n);
+}
+
+/* Navigate to a specific card set */
+function currentCard(n) {
+    showCards(currentIndex = n - 1);
+}
+
+// Initialize the first set of cards and dots
+showCards(currentIndex);
+
+    </script>
+</body>
+</html>
