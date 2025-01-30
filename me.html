@@ -291,80 +291,58 @@
     background-color: #0080ff;
 }
 
-/* General Styling */
-#portfolio {
-    text-align: center;
-    padding: 50px 20px;
-    background: #f4f4f4;
-}
-
-/* Slideshow Container */
+/* Center content in the container */
 .portfolio-slideshow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    text-align: center;
     position: relative;
     max-width: 800px;
     color: #fff;
     padding: 3rem;
     margin-bottom: 3rem;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.15);
+    
+    /* Improved Glass Effect */
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 0.75rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 37px 0 rgba(31, 38, 135, 0.37);
-    min-height: 60vh;}
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 37px 0 rgba(255, 255, 255, 0.2);
+    min-height: 60vh;
+}
 
-/* Individual Slides */
+/* Ensure the slide content is centered */
 .portfolio-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
     width: 100%;
     margin-bottom: 20px;
     text-align: center;
 }
 
-/* Ensure video fits inside the container */
+/* Center video */
 .portfolio-slide video {
-    width: 100%;
+    width: 90%; /* Slightly reduce width to fit well */
     height: auto;
     border-radius: 5px;
+    display: block;
 }
 
-/* Caption Styling */
+/* Center caption */
 .portfolio-caption {
     padding: 15px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     margin-top: 10px;
     border-radius: 5px;
+    max-width: 80%;
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-}
-
-p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .portfolio-slideshow-container {
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
-}
         
 .social-icon {
     display: inline-block;
