@@ -85,7 +85,7 @@
 }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
@@ -122,7 +122,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /Bubble Button */
+        /* Sparkle Button */
 .section-text .button {
     display: inline-block;
     text-decoration: none;
@@ -146,7 +146,7 @@
     box-shadow: 0 0 10px #0080ff, 0 0 20px #16a085;
 }
 
-/* Bubble Effect */
+/* Sparkle Effect */
 .section-text .button::before,
 .section-text .button::after {
     content: '';
@@ -159,7 +159,7 @@
     animation: sparkle-animation 1.2s infinite ease-in-out;
     pointer-events: none;
     transform: scale(0);
-    visibility: hidden; 
+    visibility: hidden; /* Hide by default */
 }
 
 .section-text .button:hover::before,
@@ -179,6 +179,7 @@
     animation-delay: 0.6s;
 }
 
+/* Keyframes for Sparkle */
 @keyframes sparkle-animation {
     0% {
         transform: scale(0.5);
@@ -193,6 +194,7 @@
         opacity: 0;
     }
 }
+
         .section-image {
             flex: 1 1 40%;
             display: flex;
@@ -288,117 +290,6 @@
 .dot:hover, .active {
     background-color: #0080ff;
 }
-
-/* Portfolio Section */
-.portfolio-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.portfolio-container {
-    display: flex;
-    gap: 2rem;
-    transition: transform 0.5s ease-in-out;
-    will-change: transform;
-}
-
-/* Card Styles */
-.card {
-    width: 300px;
-    height: 400px;
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    flex-shrink: 0;
-    cursor: pointer;
-
-    /* Set background image for card */
-    background-size: cover;
-    background-position: center;
-}
-
-/* Hover Effect */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Title and Description */
-.card-content {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    text-align: center;
-}
-
-.card-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-content p {
-    font-size: 1rem;
-}
-
-/* Navigation Buttons */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s;
-    z-index: 1000;
-}
-
-.prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Dots/Indicators */
-.dots {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dot.active {
-    background-color: #333;
-}
-
 .social-icon {
     display: inline-block;
     font-size: 50px;
@@ -527,7 +418,7 @@
             <img src="https://assets.onecompiler.app/437htatea/437htckpy/samprof.jpeg" alt="Slide 1 Image">
             <div class="caption">
                 <h2>I'm Sammeh</h2>
-                <p>I am 20 years old and I was born on September 15, 2004. Temporarily, I lived in Bulihan, Silang, Cavite.</p>
+                <p>I am 20 years old and I was born on September 15, 2004. Temporarily, I lived at Bulihan, Silang, Cavite.</p>
             </div>
         </div>
 
@@ -583,81 +474,47 @@
 </section>
 
        <!-- Portfolio Section -->
-    <section id="portfolio" class="section">
-        <div class="section-text">
-            <h1>My Portfolio</h1>
-            <p>Explore my projects and the work I have done in various fields of design and development.</p>
-        </div>
-
-        <div class="portfolio-wrapper">
-            <button class="prev">&#10094;</button>
-            <div class="portfolio-container">
-
-                <!-- Card 1 -->
-                <div class="card" 
-                     style="background-image: url('https://assets.onecompiler.app/437htatea/437htckpy/p1.jpeg');" 
-                     data-media='["https://assets.onecompiler.app/437htatea/437htckpy/p2.jpeg", "https://assets.onecompiler.app/437htatea/437htckpy/p3.jpeg"]'>
-                    <div class="card-content">
-                        <h3>Project 1</h3>
-                        <p>Description of Project 1.</p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="card" 
-                     style="background-image: url('your-image2.jpg');" 
-                     data-media='["your-image2.jpg", "video2.mp4", "another-image2.jpg"]'>
-                    <div class="card-content">
-                        <h3>Project 2</h3>
-                        <p>Description of Project 2.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="card" 
-                     style="background-image: url('your-image3.jpg');" 
-                     data-media='["your-image3.jpg", "video3.mp4", "another-image3.jpg"]'>
-                    <div class="card-content">
-                        <h3>Project 3</h3>
-                        <p>Description of Project 3.</p>
-                    </div>
-                </div>
-
-                <!-- Add More Cards as Needed -->
-</div
-            
-            <!-- Navigation Buttons -->
-                <a class="prev" onclick="plusCards(-1)">&#10094;</a>
-                <a class="next" onclick="plusCards(1)">&#10095;</a>
-            >
-
-            <!-- Dots/Indicators -->
-            <div class="dots">
-                <span class="dot" onclick="currentCard(1)"></span>
-                <span class="dot" onclick="currentCard(2)"></span>
-                <span class="dot" onclick="currentCard(3)"></span>
-                <span class="dot" onclick="currentCard(4)"></span>
-                <span class="dot" onclick="currentCard(5)"></span>
-                
-            </div>
-
-    </section>
-
-    <!-- Modal Popup -->
-    <div class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-media">
-                <button class="modal-prev">&#10094;</button>
-                <img id="modal-image" src="">
-                <video id="modal-video" controls style="display: none;"></video>
-                <button class="modal-next">&#10095;</button>
+<section id="portfolio" class="section">
+    <h1>Portfolio</h1>
+    <div class="portfolio-slideshow-container">
+        <!-- Project 1 Slide -->
+        <div class="portfolio-slide fade">
+            <video width="100%" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="portfolio-caption">
+                <h2>Project One</h2>
+                <p>This is the first project. It showcases a web development project that includes interactive elements and smooth animations.</p>
             </div>
         </div>
-    </div>
-                
-        </section>
-    </div>
+
+        <!-- Project 2 Slide -->
+        <div class="portfolio-slide fade">
+            <video width="100%" controls>
+                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="portfolio-caption">
+                <h2>Project Two</h2>
+                <p>This project is focused on responsive design and includes a modern layout with transitions and animations.</p>
+            </div>
+        </div>
+
+        <!-- Project 3 Slide -->
+        <div class="portfolio-slide fade">
+            <video width="100%" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="portfolio-caption">
+                <h2>Project Three</h2>
+                <p>This project demonstrates my skills in creating dynamic web pages with content manipulation using JavaScript.</p>
+            </div>
+        </div>
+
+</section>
+
 
 <!-- Contact Section -->
 <section id="contact" class="section">
@@ -689,43 +546,7 @@
 </footer>
 
     <script>
-             // Navbar animations using GSAP
-        document.addEventListener("DOMContentLoaded", () => {
-            const navLinks = document.querySelectorAll("nav ul li a");
-            const navList = document.querySelector("nav ul");
-
-            // Initial navbar animation
-            gsap.from(navList, {
-                opacity: 0,
-                y: -50,
-                duration: 1,
-                ease: "power3.out",
-            });
-
-            // Hover animation for nav links
-            navLinks.forEach((link) => {
-                link.addEventListener("mouseenter", () => {
-                    gsap.to(link, {
-                        y: -10,
-                        color: "#3366ff",
-                        duration: 0.3,
-                        ease: "power2.out",
-                    });
-                });
-
-                link.addEventListener("mouseleave", () => {
-                    gsap.to(link, {
-                        y: 0,
-                        color: "#ecf0f1",
-                        duration: 0.3,
-                        ease: "power2.inOut",
-                    });
-                });
-            });
-        });
-        
-        // Slideshow Script
-let slideIndex = 1;
+         let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
@@ -755,39 +576,6 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-let currentIndex = 0;
-const cards = document.querySelectorAll('.card');
-const dots = document.querySelectorAll('.dot');
-const container = document.querySelector('.portfolio-container');
-const totalCards = cards.length;
-
-/* Show the cards based on index */
-function showCards(n) {
-    if (n >= totalCards) currentIndex = 0; // Loop back to first set
-    if (n < 0) currentIndex = totalCards - 1; // Loop to last set
-
-    const offset = -currentIndex * (cards[0].offsetWidth + 16); // Adjust for margin/gap
-    container.style.transform = `translateX(${offset}px)`; // Shift the container to show the correct cards
-
-    // Update active dot
-    dots.forEach((dot, index) => {
-        dot.className = dot.className.replace(' active', '');
-        if (index === currentIndex) dot.className += ' active';
-    });
-}
-
-/* Navigate to next or previous set of cards */
-function plusCards(n) {
-    showCards(currentIndex += n);
-}
-
-/* Navigate to a specific card set */
-function currentCard(n) {
-    showCards(currentIndex = n - 1);
-}
-
-// Initialize the first set of cards and dots
-showCards(currentIndex);
-    </script>
+</script>
 </body>
 </html>
