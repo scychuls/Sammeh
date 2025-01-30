@@ -290,6 +290,7 @@
 .dot:hover, .active {
     background-color: #0080ff;
 }
+
 /* General Styling */
 #portfolio {
     text-align: center;
@@ -307,7 +308,6 @@ h1 {
     position: relative;
     max-width: 800px;
     margin: auto;
-    overflow: hidden;
     background: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -316,8 +316,9 @@ h1 {
 
 /* Individual Slides */
 .portfolio-slide {
-    display: none;
     width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Ensure video fits inside the container */
@@ -339,23 +340,12 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 p {
     font-size: 1rem;
     line-height: 1.5;
-}
-
-/* Animation for Fading Effect */
-.fade {
-    animation-name: fade;
-    animation-duration: 1s;
-}
-
-@keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
 }
 
 /* Responsive Adjustments */
